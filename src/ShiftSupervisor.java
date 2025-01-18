@@ -8,9 +8,6 @@ public class ShiftSupervisor extends Employee {double annualSalary,productionBon
     public ShiftSupervisor(String name, String id, String date) {
         super(name, id, date);
     }
-    public ShiftSupervisor() {
-        super("john", "123-A", "11-11-2005");
-    }
 
 
 // Mutator methods for the Shift Supervisors details
@@ -31,7 +28,7 @@ public class ShiftSupervisor extends Employee {double annualSalary,productionBon
     }
 
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 
 // Objects created
         ShiftSupervisor worker1 = new ShiftSupervisor("Joe Jonas", "434-F", "10-31-2005");

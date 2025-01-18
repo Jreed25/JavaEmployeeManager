@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class ProductionWorker extends Employee {
     // Constants declarations
-    public final int NO_SHIFT = 0;
     public final int DAY_SHIFT = 1;
     public final int NIGHT_SHIFT = 2;
 
@@ -15,13 +14,7 @@ public class ProductionWorker extends Employee {
     private int shift;
     private double hourlyPayRate;
 
-    // Default constructor for Production Worker
-    public ProductionWorker()
-    {
-        super();
-        shift = NO_SHIFT;
-        hourlyPayRate = 0.0;
-    }
+
     // Parameterized constructor for Production Worker
     public ProductionWorker(String empName, String empNumber, String date, int sh, double rate)
     {
@@ -88,7 +81,7 @@ public class ProductionWorker extends Employee {
     @Override
     public String toString()
     {
-        String result = "";
+        String result;
 
         result = super.toString() + "\n";
 
