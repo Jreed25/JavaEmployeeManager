@@ -11,13 +11,6 @@ public class Employee {
     private String employeeNumber;
     private String hireDate;
 
-    // Default constructor for Employee
-    public Employee()
-    {
-        employeeName = "no name yet";
-        employeeNumber = "no number yet";
-        hireDate = "no date yet";
-    }
     // Parameterized constructor for Employee
     public Employee(String empName, String empNumber, String date)
     {
