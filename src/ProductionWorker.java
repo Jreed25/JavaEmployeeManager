@@ -22,7 +22,6 @@ public class ProductionWorker extends Employee {
     }
 
     // Accessor methods
-    
     public static int getValidatedShift(Scanner input) {
         int shift;
         while (true) {
@@ -64,7 +63,7 @@ public class ProductionWorker extends Employee {
     }
 
 
-    // Mutator methods for the Production Worker details
+    // Mutator methods
     public void setShift(int sh)
     {
         shift = sh;
