@@ -13,18 +13,18 @@ public class ProductionWorkerDemo {
         Scanner input = new Scanner(System.in);
         char choice;
 
-        // Repeat the loop until the user wants to exit
+        
         do
         {
 
-            // Gather employee details from the user
+            // Gather employee details
             String empName = ProductionWorker.getValidatedName(input);
             String empNumber = ProductionWorker.getValidatedNumber(input);
             String date = ProductionWorker.getValidatedDate(input);
             int sh = ProductionWorker.getValidatedShift(input);
             double rate = ProductionWorker.getValidatedPayRate(input);
 
-            // Create and display the ProductionWorker object
+            // Create and display
             ProductionWorker worker = new ProductionWorker(empName, empNumber, date, sh, rate);
             System.out.println("\nDetails of the employee: ");
             System.out.println(worker);
