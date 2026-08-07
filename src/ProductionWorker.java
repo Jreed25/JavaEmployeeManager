@@ -6,16 +6,14 @@ import java.util.Scanner;
  */
 
 public class ProductionWorker extends Employee {
-    // Constants declarations
     public final int DAY_SHIFT = 1;
     public final int NIGHT_SHIFT = 2;
 
-    // Data fields
+
     private int shift;
     private double hourlyPayRate;
 
 
-    // Parameterized constructor for Production Worker
     public ProductionWorker(String empName, String empNumber, String date, int sh, double rate)
     {
         super(empName, empNumber, date);
@@ -23,9 +21,8 @@ public class ProductionWorker extends Employee {
         setPayRate(rate);
     }
 
-// Accessor methods
-
-    // Validates and returns the production workers shift
+    // Accessor methods
+    
     public static int getValidatedShift(Scanner input) {
         int shift;
         while (true) {
@@ -46,7 +43,7 @@ public class ProductionWorker extends Employee {
         }
     }
 
-    // Validates and returns the Production Workers pay rate
+
     public static double getValidatedPayRate(Scanner input)
     {
         double payRate;
@@ -77,7 +74,7 @@ public class ProductionWorker extends Employee {
         hourlyPayRate = rate;
     }
 
-    // Returns a string representation of Production Worker
+
     @Override
     public String toString()
     {
