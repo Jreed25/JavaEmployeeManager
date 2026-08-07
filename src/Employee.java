@@ -6,7 +6,6 @@ import java.util.Scanner;
  */
 
 public class Employee {
-    // Data fields
     private String employeeName;
     private String employeeNumber;
     private String hireDate;
@@ -20,8 +19,7 @@ public class Employee {
     }
 
 
-// Accessor methods of the Employees details
-
+    // Accessor methods of the Employees details
     public String getName()
     {
         return employeeName;
@@ -37,7 +35,7 @@ public class Employee {
         return hireDate;
     }
 
-    // Validates and returns the Employees name
+
     public static String getValidatedName(Scanner input)
     {
         String name;
@@ -56,7 +54,7 @@ public class Employee {
 
     }
 
-    // Validates and returns the Employees number
+
     public static String getValidatedNumber(Scanner input)
     {
         String number;
@@ -82,7 +80,7 @@ public class Employee {
         }
     }
 
-    // Validates and returns the Employees hire date
+
     public static String getValidatedDate(Scanner input)
     {
         String date;
@@ -110,10 +108,9 @@ public class Employee {
         }
     }
 
-    // Function for valid date
+
     public static boolean isValidDate(int month, int day, int year)
     {
-        // Checks if the day is in a valid range for the month
         if (month < 1 || month > 12) {
             return false;
         }
@@ -128,7 +125,7 @@ public class Employee {
         return day > 0 && day <= daysInMonth[month - 1];
     }
 
-    // Check for leap year
+    
     public static boolean isLeapYear(int year) {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
@@ -150,7 +147,7 @@ public class Employee {
         hireDate = date;
     }
 
-    // Returns a string representation of Employee
+
     public String toString()
     {
         String result;
