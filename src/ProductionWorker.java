@@ -6,8 +6,8 @@ import java.util.Scanner;
  */
 
 public class ProductionWorker extends Employee {
-    public final int DAY_SHIFT = 1;
-    public final int NIGHT_SHIFT = 2;
+    public static final int DAY_SHIFT = 1;
+    public static final int NIGHT_SHIFT = 2;
 
 
     private int shift;
@@ -21,22 +21,26 @@ public class ProductionWorker extends Employee {
         setPayRate(rate);
     }
 
-    // Accessor methods
-    public static int getValidatedShift(Scanner input) {
+
+    public static int getValidatedShift(Scanner input) 
+    {
         int shift;
-        while (true) {
-            // use try, catch to check for valid input
+        
+        while (true) 
+        {
             try
             {
                 System.out.print("Enter the shift (1 for day, 2 for night): ");
                 shift = Integer.parseInt(input.nextLine());
-                if (shift == 1 || shift == 2)
+                if (shift == DAY_SHIFT || shift == NIGHT_SHIFT)
+                {
                     return shift;
-                else
+                } else
+                {
                     System.out.println("Invalid shift. Shift must be 1 or 2");
-
-            }
-            catch (NumberFormatException e) {
+                }
+            } catch (NumberFormatException e) 
+            {
                 System.out.println("Invalid input. Shift must be 1 or 2");
             }
         }
@@ -46,28 +50,33 @@ public class ProductionWorker extends Employee {
     public static double getValidatedPayRate(Scanner input)
     {
         double payRate;
-        while(true) {
-            // use try, catch to check for valid input
-            try {
+
+        while(true) 
+        {
+            try 
+            {
                 System.out.print("Enter your hourly pay rate: $");
                 payRate = Double.parseDouble(input.nextLine());
-                if (payRate > 0) {
+                if (payRate > 0) 
+                {
                     return payRate;
-                } else {
+                } else 
+                {
                     System.out.println("Pay rate must be a positive number. Try again.");
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) 
+            {
                 System.out.println("Invalid input. Please enter a valid number.");
             }
         }
     }
 
 
-    // Mutator methods
     public void setShift(int sh)
     {
         shift = sh;
     }
+    
     public void setPayRate(double rate)
     {
         hourlyPayRate = rate;

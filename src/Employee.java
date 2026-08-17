@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 /**
- * Represents a general employee with basic details like name, ID, and hire date.
- * Provides methods to validate and set employee attributes.
+ * Represents a general employee with basic details such as name,
+ * employee number, and hire date.
  */
 
 public class Employee {
@@ -10,7 +10,6 @@ public class Employee {
     private String employeeNumber;
     private String hireDate;
 
-    // Parameterized constructor for Employee
     public Employee(String empName, String empNumber, String date)
     {
         setName(empName);
@@ -19,7 +18,6 @@ public class Employee {
     }
 
 
-    // Accessor methods of the Employees details
     public String getName()
     {
         return employeeName;
@@ -44,7 +42,7 @@ public class Employee {
             System.out.print("Enter the employee name: ");
             name = input.nextLine();
 
-            // Checking if the name is valid
+
             if (name.matches("[a-zA-Z ]+")) {
                 return name;
             } else {
@@ -54,16 +52,16 @@ public class Employee {
 
     }
 
-
     public static String getValidatedNumber(Scanner input)
     {
         String number;
+
         while(true)
         {
             System.out.print("Enter the employee number in the format XXX-L (X: digits, L: A-M): ");
             number = input.nextLine();
 
-            // Checks for valid format and input for the employee number
+
             if(number.length() == 5
                     && Character.isDigit(number.charAt(0))
                     && Character.isDigit(number.charAt(1))
@@ -80,43 +78,46 @@ public class Employee {
         }
     }
 
-
     public static String getValidatedDate(Scanner input)
     {
         String date;
-        while (true) {
 
+        while (true)
+        {
             System.out.print("Enter the employee hire date (MM-DD-YYYY): ");
             date = input.nextLine();
 
-            // Checks that the date is in the correct format
-            if (date.matches("\\d{2}-\\d{2}-\\d{4}")) {
+            if (date.matches("\\d{2}-\\d{2}-\\d{4}"))
+            {
                 String[] parts = date.split("-");
 
                 int month = Integer.parseInt(parts[0]);
                 int day = Integer.parseInt(parts[1]);
                 int year = Integer.parseInt(parts[2]);
-                if(isValidDate(month, day, year)) {
-                    return date;
-                } else
+
+                if (isValidDate(month, day, year))
                 {
-                    System.out.println("Invalid date values. Please ensure the date is valid.");
+                    return date;
                 }
-            } else {
-                System.out.println("Invalid date format. Please use MM-DD-YYYY. ");
+
+                System.out.println("Invalid date values. Please ensure the date is valid.");
+            }
+            else
+            {
+                System.out.println("Invalid date format. Please use MM-DD-YYYY.");
             }
         }
     }
 
-
     public static boolean isValidDate(int month, int day, int year)
     {
-        if (month < 1 || month > 12) {
+        if (month < 1 || month > 12 || year < 1) 
+        {
             return false;
         }
+        
         int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        // Adjust for leap year
         if (month == 2 && isLeapYear(year))
         {
             daysInMonth[1] = 29;
@@ -126,16 +127,17 @@ public class Employee {
     }
 
     
-    public static boolean isLeapYear(int year) {
+    public static boolean isLeapYear(int year) 
+    {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
 
-    // Mutator methods for the Employees details
     public void setName(String empName)
     {
         employeeName = empName;
     }
+    
 
     public void setNumber(String empNumber)
     {
@@ -148,14 +150,13 @@ public class Employee {
     }
 
 
+    @Override
     public String toString()
     {
-        String result;
 
-        result = "Employee name: " + employeeName + "\n"
+        return "Employee name: " + employeeName + "\n"
                 + "Employee number: " + employeeNumber + "\n"
                 + "Employee hire date: " + hireDate;
 
-        return result;
     }
 }
