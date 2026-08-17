@@ -1,33 +1,50 @@
-Overview  
-This is a Java-based Employee Management System that models different employee roles, including Production Workers and Shift Supervisors. 
-The program allows users to enter and validate employee details such as name, ID, hire date, shift, and pay rate.
+# Java Employee Management System
 
+A Java program that uses object-oriented programming to manage different types of employees. The system stores employee information and demonstrates inheritance, encapsulation, and input validation.
 
-Features
+## Features
 
-- Employee Data Management: Store and manage employee details.
-- Role-Specific Classes: Separate classes for different roles (Production Worker, Shift Supervisor, etc.).
-- Input Validation: Ensures valid input for employee name, number, date, shift, and pay rate.
-- Automatic Error Handling: Prevents incorrect data entry through validation checks.
-- Object-Oriented Structure: Uses inheritance and encapsulation for maintainability.
+- Create and manage employee information
+- Support Production Worker and Shift Supervisor roles
+- Store employee name, ID, and hire date
+- Manage shift and pay rate for production workers
+- Manage salary and bonus information for shift supervisors
+- Validate user input
 
+## Concepts Demonstrated
 
-Files Included
+- Object-oriented programming
+- Inheritance
+- Encapsulation
+- Classes and objects
+- Constructors
+- Input validation
+- Multiple related classes
 
-- Employee.java - Base class for all employees.
-- ProductionWorker.java - Inherits from Employee, includes shift and pay rate.
-- ShiftSupervisor.java - Inherits from Employee, includes salary and bonus.
-- ProductionWorkerDemo.java - Demonstration program that interacts with the user.
+## Project Structure
 
+```text
+JavaEmployeeManager/
+├── src/
+│   ├── Employee.java
+│   ├── ProductionWorker.java
+│   ├── ShiftSupervisor.java
+│   └── ProductionWorkerDemo.java
+├── .gitignore
+├── LICENSE
+└── README.md
+```
 
-Future Improvements
+## How to run
 
-- Add a graphical user interface (GUI).
-- Implement a database for persistent storage.
-- Extend functionality with more employee roles.
-- Optimize constructors and remove unused methods.
+Compile the program with:
 
+```bash
+javac -d out src/*.java
+```
 
-License  
-This project is licensed under the MIT License.
+Run it with:
 
+```bash
+java -cp out ProductionWorkerDemo
+```
