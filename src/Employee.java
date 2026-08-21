@@ -109,6 +109,7 @@ public class Employee {
         }
     }
 
+
     public static boolean isValidDate(int month, int day, int year)
     {
         if (month < 1 || month > 12 || year < 1) 
@@ -126,7 +127,6 @@ public class Employee {
         return day > 0 && day <= daysInMonth[month - 1];
     }
 
-    
     public static boolean isLeapYear(int year) 
     {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
@@ -153,10 +153,8 @@ public class Employee {
     @Override
     public String toString()
     {
-
         return "Employee name: " + employeeName + "\n"
                 + "Employee number: " + employeeNumber + "\n"
                 + "Employee hire date: " + hireDate;
-
     }
 }

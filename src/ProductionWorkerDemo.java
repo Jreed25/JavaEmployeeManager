@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -6,11 +7,13 @@ import java.util.Scanner;
 
 public class ProductionWorkerDemo {
 
-
     public static void main(String[] args)
     {
- 
+        ArrayList<ShiftSupervisor> supervisors =
+            SupervisorManager.createSupervisors();
+
         Scanner input = new Scanner(System.in);
+ 
         char choice;
 
     
@@ -19,12 +22,14 @@ public class ProductionWorkerDemo {
             String empName = Employee.getValidatedName(input);
             String empNumber = Employee.getValidatedNumber(input);
             String date = Employee.getValidatedDate(input);
+            ShiftSupervisor supervisor = 
+                ProductionWorker.getValidatedSupervisor(input, supervisors);
             int sh = ProductionWorker.getValidatedShift(input);
             double rate = ProductionWorker.getValidatedPayRate(input);
 
 
             ProductionWorker worker = 
-                new ProductionWorker(empName, empNumber, date, sh, rate);
+                new ProductionWorker(empName, empNumber, date, supervisor, sh, rate);
             System.out.println("\nEmployee Details: ");
             System.out.println(worker);
 
